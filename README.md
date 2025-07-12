@@ -2,7 +2,7 @@
 
 **Proactive Protection — Powered by Intelligence**
 
-`IDS.AI` is a machine learning–driven real-time Intrusion Detection System designed to efficiently detect and mitigate DoS and DDoS attacks. Built as a B.Tech Mini Project, this system aims to empower network security through intelligent traffic analysis and live monitoring.
+`IDS.AI` is a machine learning–driven real-time Intrusion Detection System designed to efficiently detect and mitigate DoS and DDoS attacks. Built as a B.Tech Mini Project, this system empowers network security through intelligent traffic analysis and live monitoring.
 
 ---
 
@@ -34,6 +34,9 @@
   - Data balancing (DoS/DDoS vs Normal)  
   - Encoding and model persistence via `.pkl` files
 
+> ⚠️ **Note:** Large `.csv` files and datasets are excluded from this repository to keep it lightweight and version-control friendly.  
+> You can regenerate them by following the steps in `balance.py` and `scale_features.py` using the CICIDS dataset.
+
 ---
 
 ## 🛠️ Tech Stack
@@ -42,55 +45,43 @@
 - **Backend**: Python  
 - **ML Libraries**: Scikit-learn, Pandas, NumPy  
 - **Network Packet Processing**: Scapy  
-- **Data Storage**: CSV logs for attack data and real-time monitoring
-
----
-
-## 📁 Dataset Access
-
-> 🚫 **Note:**  
-> The original dataset files (e.g., `balanced_dataset.csv`, `scaled_dataset.csv`) have been **intentionally removed** from the repository to reduce its size and clean commit history.  
->
-> 📁 Please place the required `.csv` files inside the `Datasets/` folder **manually** before running training or evaluation scripts.  
->
-> 📥 You may retrieve the datasets from:
-> - Your local copy
-> - An institutional shared drive (if applicable)
-> - Public sources like [CICIDS Dataset](https://www.unb.ca/cic/datasets/ids.html)
+- **Data Storage**: Processed `.pkl` files and logs
 
 ---
 
 ## 📂 Project Structure
 
-```bash
 network-ids/
 │
-├── train_model.py               # ML model training script
-├── test_model.py                # Model evaluation
-├── balance.py                   # Dataset balancing script
-├── scale_features.py            # Feature scaling and processing
-├── app.py                       # Flask web app
+├── train_model.py # ML model training script
+├── test_model.py # Model evaluation
+├── balance.py # Dataset balancing script
+├── scale_features.py # Feature scaling and processing
+├── app.py # Flask web app
 │
-├── ids_model.pkl                # Trained model
-├── feature_columns.pkl          # Selected features
-├── label_encoder.pkl            # Label encoder
+├── ids_model.pkl # Trained model
+├── feature_columns.pkl # Selected features
+├── label_encoder.pkl # Label encoder
 │
-├── static/                      # CSS, JS assets
-├── templates/                   # HTML templates
-├── Datasets/                    # Folder for dataset CSV files (excluded from Git)
-├── requirements.txt             # Python dependencies
-└── README.md
-How to Run
+├── static/ # CSS, JS assets
+├── templates/ # HTML templates
+├── venv/ # Virtual environment (excluded from Git)
+└── pycache/ # Python cache files (excluded from Git)
+
+---
+
+## 🧪 How to Run
+
+```bash
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Place required CSV files into the Datasets/ folder
-
-# 3. Start Flask App
+# 2. Start Flask App
 python app.py
 
-# 4. Access the Dashboard
-Visit http://localhost:5000 in your browser
+# 3. Access Dashboard
+Open your browser at http://localhost:5000
+
 👥 Team
 Simon J Kurian – ML Model Development & Frontend
 
@@ -98,12 +89,8 @@ Rohan C Anish – Backend & Dataset Handling
 
 Muhammed Fawaz Kalathingal – Data Preprocessing & Integration
 
-Institution:
-Department of AI & Data Science
+Institution: Department of AI & Data Science
 Muthoot Institute of Technology and Science, Ernakulam
 
 🎓 Guided by
 Ms. Rija Jose
-Assistant Professor
-Dept. of AI & Data Science
-
