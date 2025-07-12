@@ -46,38 +46,51 @@
 
 ---
 
-## 📂 Project Structure
+## 📁 Dataset Access
 
-network-ids/
-│
-├── train_model.py # ML model training script
-├── test_model.py # Model evaluation
-├── balance.py # Dataset balancing script
-├── scale_features.py # Feature scaling and processing
-├── app.py # Flask web app
-│
-├── ids_model.pkl # Trained model
-├── feature_columns.pkl # Selected features
-├── label_encoder.pkl # Label encoder
-│
-├── static/ # CSS, JS assets
-├── templates/ # HTML templates
-├── Datasets/ # Raw/processed datasets
-└── 
+> 🚫 **Note:**  
+> The original dataset files (e.g., `balanced_dataset.csv`, `scaled_dataset.csv`) have been **intentionally removed** from the repository to reduce its size and clean commit history.  
+>
+> 📁 Please place the required `.csv` files inside the `Datasets/` folder **manually** before running training or evaluation scripts.  
+>
+> 📥 You may retrieve the datasets from:
+> - Your local copy
+> - An institutional shared drive (if applicable)
+> - Public sources like [CICIDS Dataset](https://www.unb.ca/cic/datasets/ids.html)
 
 ---
 
-## 🧪 How to Run
+## 📂 Project Structure
 
 ```bash
+network-ids/
+│
+├── train_model.py               # ML model training script
+├── test_model.py                # Model evaluation
+├── balance.py                   # Dataset balancing script
+├── scale_features.py            # Feature scaling and processing
+├── app.py                       # Flask web app
+│
+├── ids_model.pkl                # Trained model
+├── feature_columns.pkl          # Selected features
+├── label_encoder.pkl            # Label encoder
+│
+├── static/                      # CSS, JS assets
+├── templates/                   # HTML templates
+├── Datasets/                    # Folder for dataset CSV files (excluded from Git)
+├── requirements.txt             # Python dependencies
+└── README.md
+How to Run
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Start Flask App
+# 2. Place required CSV files into the Datasets/ folder
+
+# 3. Start Flask App
 python app.py
 
-# 3. Access Dashboard
-Open your browser at http://localhost:5000
+# 4. Access the Dashboard
+Visit http://localhost:5000 in your browser
 👥 Team
 Simon J Kurian – ML Model Development & Frontend
 
@@ -85,9 +98,12 @@ Rohan C Anish – Backend & Dataset Handling
 
 Muhammed Fawaz Kalathingal – Data Preprocessing & Integration
 
-Institution: Department of AI & Data Science
+Institution:
+Department of AI & Data Science
 Muthoot Institute of Technology and Science, Ernakulam
 
 🎓 Guided by
 Ms. Rija Jose
-# Network-IDS
+Assistant Professor
+Dept. of AI & Data Science
+
